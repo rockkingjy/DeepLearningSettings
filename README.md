@@ -1,5 +1,5 @@
 # DeepLearning Computer Settings and test with darknet (With all the files' links!!!)
-## Attention: I installed all the include and library in my personal path: /home/elab/yanInstall/, instead of the default path like 
+## Attention: I installed all the include and library in my personal path: /home/elab/yanInstall/, instead of the default path, so you should change it to your own!
 
 1. Create a bootable USB stick on macOS
 
@@ -80,6 +80,14 @@ Create folder weights/ in the darknet/, put all the weights inside, set the Make
 GPU=1
 CUDNN=1
 OPENMP=1
+```
+If you use your own path location like me, then change:
+```
+ifeq ($(GPU), 1) 
+COMMON+= -DGPU -I/home/elab/yanInstall/cuda-8.0/include/
+CFLAGS+= -DGPU
+LDFLAGS+= -L/home/elab/yanInstall/cuda-8.0/lib64 -lcuda -lcudart -lcublas -lcurand
+endif
 ```
 then run:
 ```
