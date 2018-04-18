@@ -68,9 +68,10 @@ cat /home/elab/yanInstall/cuda-8.0/include/cudnn.h | grep CUDNN_MAJOR -A 2
 
 5. Install git cmake ccmake etc.
 ```
-sudo apt-get install git
-sudo apt-get cmake cmake-curses-gui
+sudo apt-get update
+sudo apt-get -y install build-essential cmake cmake-curses-gui git libboost-all-dev libgflags-dev libgoogle-glog-dev uuid-dev libboost-filesystem-dev libboost-system-dev libboost-thread-dev ncurses-dev
 sudo apt-get -y install libatlas-base-dev libopenblas-base libopenblas-dev liblapack-dev liblapack3
+sudo apt-get -y install libprotobuf-dev libleveldb-dev libsnappy-dev libhdf5-serial-dev liblmdb-dev protobuf-compiler unzip libtbb-dev libtbb2 pkg-config gfortran
 ```
 Download and install Eigen [[Link](https://drive.google.com/drive/folders/11TobALF_VWeBLsCfoVtJhGeRUMW_Oq1m?usp=sharing)]:
 ```
@@ -82,7 +83,7 @@ cmake ..
 sudo make install
 ```
 
-6. Down and install OpenCV [[Link](https://drive.google.com/drive/folders/11TobALF_VWeBLsCfoVtJhGeRUMW_Oq1m?usp=sharing)]:
+6. Download and install OpenCV [[Link](https://drive.google.com/drive/folders/11TobALF_VWeBLsCfoVtJhGeRUMW_Oq1m?usp=sharing)]:
 ```
 cd opencv
 mkdir build
