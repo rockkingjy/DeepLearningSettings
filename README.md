@@ -91,7 +91,8 @@ ccmake ..
 ```
 Change the item OPENCV_EXTRA_MODULE_PATH as `/home/elab/Amy/opencv_contrib-3.4/modules`
 ```
-make all -j
+cmake ..
+make all -j8
 sudo make install
 ```
 
