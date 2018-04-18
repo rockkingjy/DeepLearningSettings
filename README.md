@@ -66,16 +66,29 @@ Check the version of cudnn:
 cat /home/elab/yanInstall/cuda-8.0/include/cudnn.h | grep CUDNN_MAJOR -A 2
 ```
 
-5. Install git
+5. Install git cmake ccmake etc.
 ```
 sudo apt-get install git
+sudo apt-get cmake cmake-curses-gui
 ```
 
-6. Install Darknet
+6. Install OpenCV
+```
+git clone https://github.com/opencv/opencv.git
+git clone https://github.com/opencv/opencv_contrib.git
+cd opencv
+mkdir build
+cd build
+ccmake ../
+make all -j
+sudo make install
+```
+
+7. Install Darknet
 ```
 git clone https://github.com/rockkingjy/darknet
 ```
-Create folder weights/ in the darknet/, download the weights [[Link](https://drive.google.com/drive/folders/1DD1qv4fm-bcdeQIYoB1t_-XciVXq4xxr?usp=sharing)], put all the weights inside, set the Makefile+
+Create folder weights/ in the darknet/, download the weights [[Link](https://drive.google.com/drive/folders/1DD1qv4fm-bcdeQIYoB1t_-XciVXq4xxr?usp=sharing)], put all the weights inside, set the Makefile:
 ```
 GPU=1
 CUDNN=1
