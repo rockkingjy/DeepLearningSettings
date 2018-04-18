@@ -70,6 +70,16 @@ cat /home/elab/yanInstall/cuda-8.0/include/cudnn.h | grep CUDNN_MAJOR -A 2
 ```
 sudo apt-get install git
 sudo apt-get cmake cmake-curses-gui
+sudo apt-get -y install libatlas-base-dev libopenblas-base libopenblas-dev liblapack-dev liblapack3
+```
+Download and install Eigen [[Link](https://drive.google.com/drive/folders/11TobALF_VWeBLsCfoVtJhGeRUMW_Oq1m?usp=sharing)]:
+```
+tar xzvf eigen-3.3.4.tar.gz 
+cd eigen
+mkdir build
+cd build
+cmake ../
+sudo make install
 ```
 
 6. Install OpenCV
@@ -80,6 +90,9 @@ cd opencv
 mkdir build
 cd build
 ccmake ../
+```
+Change the item OPENCV_EXTRA_MODULE_PATH as `/home/elab/Amy/opencv_contrib/modules`
+```
 make all -j
 sudo make install
 ```
