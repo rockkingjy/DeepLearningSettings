@@ -71,11 +71,11 @@ cat /home/elab/yanInstall/cuda-8.0/include/cudnn.h | grep CUDNN_MAJOR -A 2
 sudo apt-get install git
 ```
 
-6. Install Darknet and download the weights [[Link](https://drive.google.com/drive/folders/1DD1qv4fm-bcdeQIYoB1t_-XciVXq4xxr?usp=sharing)]
+6. Install Darknet
 ```
 git clone https://github.com/rockkingjy/darknet
 ```
-Create folder weights/ in the darknet/, put all the weights inside, set the Makefile+
+Create folder weights/ in the darknet/, download the weights [[Link](https://drive.google.com/drive/folders/1DD1qv4fm-bcdeQIYoB1t_-XciVXq4xxr?usp=sharing)], put all the weights inside, set the Makefile+
 ```
 GPU=1
 CUDNN=1
