@@ -88,13 +88,13 @@ sudo make install
 6. Download and install OpenCV [[Link](https://drive.google.com/drive/folders/11TobALF_VWeBLsCfoVtJhGeRUMW_Oq1m?usp=sharing)]:
 ```
 cd opencv
-mkdir build
-cd build
-ccmake ..
+mkdir release
+cd release
 ```
-Change the item OPENCV_EXTRA_MODULE_PATH as `/home/elab/Amy/opencv_contrib/modules`, configure, configure and generate, then:
+Change the item `OPENCV_EXTRA_MODULE_PATH` as `/home/elab/Amy/opencv_contrib/modules`, configure, configure and generate, then:
 ```
-make all -j8
+cmake -D OPENCV_EXTRA_MODULE_PATH=/home/elab/Amy/opencv_contrib/modules -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
+make -j`nproc`
 sudo make install
 ```
 
