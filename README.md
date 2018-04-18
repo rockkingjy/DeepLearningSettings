@@ -1,4 +1,4 @@
-# DeepLearning Computer Settings and test with darknet (With all the files' links!!!)
+# DeepLearning Computer Settings and test with darknet (With all the files' links)
 **Attention: I installed all the include and library in my personal path: /home/elab/yanInstall/, instead of the default path, so you should change it to your own!**
 
 1. Create a bootable USB stick on macOS
@@ -120,5 +120,5 @@ then run:
 ```
 ./darknet detector demo cfg/coco.data cfg/yolov2.cfg weights/yolo.weights 
 ```
-If it run successfully, you will see the predictions.png in darknet/, that also mean your CUDA and cudnn installs corectly.
+If it run successfully, you will see the predictions.png in darknet/, that also mean your CUDA and cudnn installs correctly.
 
