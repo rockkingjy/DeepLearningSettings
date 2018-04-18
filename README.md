@@ -78,20 +78,18 @@ tar xzvf eigen-3.3.4.tar.gz
 cd eigen
 mkdir build
 cd build
-cmake ../
+cmake ..
 sudo make install
 ```
 
-6. Install OpenCV
+6. Down and install OpenCV [[Link](https://drive.google.com/drive/folders/11TobALF_VWeBLsCfoVtJhGeRUMW_Oq1m?usp=sharing)]:
 ```
-git clone https://github.com/opencv/opencv.git
-git clone https://github.com/opencv/opencv_contrib.git
-cd opencv
+cd opencv-3.4
 mkdir build
 cd build
-ccmake ../
+ccmake ..
 ```
-Change the item OPENCV_EXTRA_MODULE_PATH as `/home/elab/Amy/opencv_contrib/modules`
+Change the item OPENCV_EXTRA_MODULE_PATH as `/home/elab/Amy/opencv_contrib-3.4/modules`
 ```
 make all -j
 sudo make install
