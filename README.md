@@ -1,5 +1,5 @@
 # DeepLearning Computer Settings and test with darknet (With all the files' links!!!)
-## Attention: I installed all the include and library in my personal path: /home/elab/yanInstall/, instead of the default path, so you should change it to your own!
+** Attention: I installed all the include and library in my personal path: /home/elab/yanInstall/, instead of the default path, so you should change it to your own!**
 
 1. Create a bootable USB stick on macOS
 
