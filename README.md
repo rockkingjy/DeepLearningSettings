@@ -1,4 +1,5 @@
-# DeepLearningSettings
+# DeepLearning Computer Settings and test with darknet (With all the files' links!!!)
+## Attention: I installed all the include and library in my personal path: /home/elab/yanInstall/, instead of the default path like 
 
 1. Create a bootable USB stick on macOS
 
@@ -36,8 +37,8 @@ sudo gedit ~/.bashrc
 ```
 Add:
 ```
-export PATH=/usr/local/cuda-8.0/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
+export PATH=/home/elab/yanInstall/cuda-8.0/bin:$PATH
+export LD_LIBRARY_PATH=/home/elab/yanInstall/cuda-8.0/lib64:$LD_LIBRARY_PATH
 ```
 ```
 source ~/.bashrc
