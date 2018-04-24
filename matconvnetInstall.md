@@ -20,7 +20,7 @@ update-alternatives --query gcc
 ```
 --> Start the matlab:
 ```
-sudo /media/elab/sdd/R2017a/bin/matlab
+/media/elab/sdd/R2017a/bin/matlab
 ```
 --> Go to the directory of matconvnet:
 ```
