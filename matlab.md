@@ -1,7 +1,7 @@
-## Install [Matlab](https://drive.google.com/open?id=1HGlRtgAd7DIbmuMlrmA9YFesnOAp49fE).
-## Change the default shortcut: Home -> Preferences -> Keyboard/Shortcuts -> Active settings -> Windows Default Set
-## Change the color scheme: Home -> Preferences -> Colors -> 
-## Install Matconvenet:
+* Install [Matlab](https://drive.google.com/open?id=1HGlRtgAd7DIbmuMlrmA9YFesnOAp49fE).
+* Change the default shortcut: Home -> Preferences -> Keyboard/Shortcuts -> Active settings -> Windows Default Set.
+* Change the color scheme: Home -> Preferences -> Colors -> Change the color.
+* Install Matconvenet:
 $sudo apt-get install gcc-4.9 g++-4.9
 
 --> Set "priority=100" for gcc-4.9 and "priority=50" for gcc-5 and g++-5.
