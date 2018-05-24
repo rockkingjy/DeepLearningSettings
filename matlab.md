@@ -1,4 +1,4 @@
-## Install [Matlab(https://drive.google.com/open?id=1HGlRtgAd7DIbmuMlrmA9YFesnOAp49fE)].
+## Install [Matlab](https://drive.google.com/open?id=1HGlRtgAd7DIbmuMlrmA9YFesnOAp49fE).
 ## Change the default shortcut: Home -> Preferences -> Keyboard/Shortcuts -> Active settings -> Windows Default Set
 ## Change the color scheme: Home -> Preferences -> Colors -> 
 ## Install Matconvenet:
