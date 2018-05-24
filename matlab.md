@@ -20,7 +20,7 @@ vl_compilenn;
 ```
 Run quick start examples:http://www.vlfeat.org/matconvnet/quick/
 
-** Attention: ** Before use the functions, should run:
+**Attention:** Before use the functions, should run:
 ```
 vl_setupnn;
 ```
@@ -29,9 +29,12 @@ if not, will cause 'SCRIPT' error!!!
 If using gpu:
 ```
 vl_compilenn('enableGpu', true, 'cudaRoot', '/usr/local/cuda', 'enableCudnn', true)
-```
 
+```
 --------------------------
+
+
+Other maybe useful:
 Install gcc4.9
 ```
 $sudo apt-get install gcc-4.9 g++-4.9
