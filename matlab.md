@@ -28,8 +28,23 @@ LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu \
 ```
 cd /media/elab/sdd/matlabInstall/matconvnet/
 addpath matlab
+```
+If just cpu:
+```
+vl_compilenn;
+```
+If using gpu:
+```
 vl_compilenn('enableGpu', true, 'cudaRoot', '/usr/local/cuda', 'enableCudnn', true)
 ```
+Quick start examples:http://www.vlfeat.org/matconvnet/quick/
+
+6. Before use the functions, should run:
+```
+vl_setupnn;
+```
+if not, will cause 'SCRIPT' error!!!
+
 
 ### Careful! Need to change back to set high priority to gcc-5 back to compile caffe!
 ```
