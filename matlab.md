@@ -28,7 +28,7 @@ if not, will cause 'SCRIPT' error!!!
 --------------------------
 If using gpu:
 ```
-vl_compilenn('enableGpu', true, 'cudaRoot', '/usr/local/cuda', 'enableCudnn', true)
+vl_compilenn('enableGpu', true, 'cudaRoot', '/usr/local/cuda-8.0', 'enableCudnn', true)
 
 ```
 --------------------------
