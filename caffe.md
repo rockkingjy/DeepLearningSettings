@@ -36,7 +36,10 @@ Then in caffe/:
 make clean
 make -j`nproc`
 ```
-
+And add the lib to the ~/.bashrc for future use:
+```
+export LD_LIBRARY_PATH=/media/elab/sdd/caffe/build/lib:$LD_LIBRARY_PATH
+```
 
 ## Draw the nets
 ```
