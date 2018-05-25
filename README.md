@@ -143,7 +143,7 @@ then run:
 ```
 If it run successfully, you will see the predictions.png in darknet/, that also mean your CUDA and cudnn installs correctly.
 
-8. Install Caffe
+8. Install Caffe (More details in https://github.com/rockkingjy/DeepLearningSettings/blob/master/caffe.md)
 ```
 git clone https://github.com/rockkingjy/caffe
 cd caffe
