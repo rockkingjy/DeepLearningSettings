@@ -20,7 +20,7 @@ Attention: If choose from the LEGACY OPTIONS, it will cause the problem of unabl
 
 Download `NVIDIA-Linux-x86_64-384.59.run` and `cuda_8.0.61_375.26_linux.run` [[Link](https://drive.google.com/drive/folders/11TobALF_VWeBLsCfoVtJhGeRUMW_Oq1m?usp=sharing)]
 
-Need to update from 14.4.01 to 14.4.04 to install the driver(else have error of install driver):
+Need to update from 14.4.01 to **14.4.04** to install the driver(else have error of install driver):
 ```
 sudo apt-get update
 sudo apt-get upgrade
@@ -30,6 +30,7 @@ Install the driver:
 Ctrl+Alt+F1 -> login -> 
 ```
 sudo service lightdm stop 
+sudo chmod 777 ./NVIDIA-Linux-x86_64-384.59.run
 sudo ./NVIDIA-Linux-x86_64-384.59.run --no-opengl-files 
 reboot
 nvidia-smi
@@ -104,18 +105,15 @@ sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libp
 cd opencv
 mkdir release
 cd release
-```
-Change the item `OPENCV_EXTRA_MODULE_PATH` as `/meida/elab/sdd/Amy/opencv_contrib/modules`, configure, configure and generate, then:
-```
 ccmake ..
 ```
-set `OPENCV_EXTRA_MODULE_PATH` as `/media/elab/sdd/Amy/opencv_contrib/modules`, then:
+**set `OPENCV_EXTRA_MODULE_PATH` as `/media/elab/sdd/Amy/opencv_contrib/modules`**,  configure, configure and generate, then:
 ```
 cmake -D OPENCV_EXTRA_MODULE_PATH=/media/elab/sdd/Amy/opencv_contrib/modules -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
 make -j`nproc` 
 sudo make install
 ```
-Add the path:
+Add the path permanently:
 ```
 sudo gedit ~/.bashrc
 ```
