@@ -122,17 +122,22 @@ GPU=1
 CUDNN=1
 OPENMP=1
 ```
-If you use your own path location like me, then change:
-```
-ifeq ($(GPU), 1) 
-COMMON+= -DGPU -I/usr/local/cuda-8.0/include/
-CFLAGS+= -DGPU
-LDFLAGS+= -L/usr/local/cuda-8.0/lib64 -lcuda -lcudart -lcublas -lcurand
-endif
-```
 then run:
 ```
-./darknet detector demo cfg/coco.data cfg/yolov2.cfg weights/yolo.weights 
+./darknet detector demo cfg/coco.data cfg/yolov3.cfg weights/yolov3.weights
 ```
 If it run successfully, you will see the predictions.png in darknet/, that also mean your CUDA and cudnn installs correctly.
+
+8. Install Caffe
+```
+git clone https://github.com/rockkingjy/caffe
+cd caffe
+mkdir build
+cmake ..
+make -j`nproc`
+sudo make install
+```
+then follow https://github.com/rockkingjy/Inference_RGB2D_caffe to run a RGB2Depth programme.
+
+9. Install matlab2017 following: https://github.com/rockkingjy/DeepLearningSettings/blob/master/matlab.md
 
