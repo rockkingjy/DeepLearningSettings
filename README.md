@@ -107,9 +107,26 @@ cd release
 ```
 Change the item `OPENCV_EXTRA_MODULE_PATH` as `/meida/elab/sdd/Amy/opencv_contrib/modules`, configure, configure and generate, then:
 ```
+ccmake ..
+```
+set `OPENCV_EXTRA_MODULE_PATH` as `/media/elab/sdd/Amy/opencv_contrib/modules`, then:
+```
 cmake -D OPENCV_EXTRA_MODULE_PATH=/media/elab/sdd/Amy/opencv_contrib/modules -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
 make -j`nproc` 
 sudo make install
+```
+Add the path:
+```
+sudo gedit ~/.bashrc
+```
+Add:
+```
+export PATH=/usr/local/cuda-8.0/bin:/usr/local/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:/usr/local/lib:$LD_LIBRARY_PATH
+```
+and don't forget:
+```
+source ~/.bashrc
 ```
 
 7. Install Darknet
