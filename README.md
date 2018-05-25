@@ -1,5 +1,4 @@
-# DeepLearning Computer Settings and test with darknet (With all the files' links)
-**Attention: I installed all the include and library in my personal path: /home/elab/yanInstall/, instead of the default path, so you should change it to your own!**
+# DeepLearning Computer Settings and test with darknet (With all the files' links, so don't worry about the version compilance)
 
 1. Create a bootable USB stick on macOS
 
@@ -19,17 +18,28 @@ Attention: If choose from the LEGACY OPTIONS, it will cause the problem of unabl
 
 3.Install Nvidia GPU driver and CUDA 8.0
 
-Download cuda_8.0.61_375.26_linux.run [[Link](https://drive.google.com/drive/folders/11TobALF_VWeBLsCfoVtJhGeRUMW_Oq1m?usp=sharing)]
+Download `NVIDIA-Linux-x86_64-384.59.run` and `cuda_8.0.61_375.26_linux.run` [[Link](https://drive.google.com/drive/folders/11TobALF_VWeBLsCfoVtJhGeRUMW_Oq1m?usp=sharing)]
 
+Need to update from 14.4.01 to 14.4.04 to install the driver(else have error of install driver):
+```
+sudo apt-get update
+sudo apt-get upgrade
+lsb_release -a
+```
+Install the driver:
 Ctrl+Alt+F1 -> login -> 
 ```
 sudo service lightdm stop 
-chmod 777 cuda_8.0.61_375.26_linux.run
-sudo ./cuda_8.0.61_375.26_linux.run --override --no-opengl-lib     
+sudo ./NVIDIA-Linux-x86_64-384.59.run --no-opengl-files 
 reboot
 nvidia-smi
 ```
-Attention: OpenGL-lib will cause login loop!!!!!!(Waste my days!!!)
+Install cuda 8.0(do not install driver again):
+```
+chmod 777 cuda_8.0.61_375.26_linux.run
+sudo ./cuda_8.0.61_375.26_linux.run --override --no-opengl-lib     
+```
+**Attention: OpenGL-lib will cause login loop!!!!!!**(Waste my days!!!)
 
 Change the cuda PATH permanently:
 ```
@@ -37,12 +47,12 @@ sudo gedit ~/.bashrc
 ```
 Add:
 ```
-export PATH=/home/elab/yanInstall/cuda-8.0/bin:$PATH
-export LD_LIBRARY_PATH=/home/elab/yanInstall/cuda-8.0/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/local/cuda-8.0/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
 ```
 ```
 source ~/.bashrc
-nvcc —-version
+nvcc --version
 ```
 Don’t need to try to run examples of CUDA.
 
@@ -51,19 +61,19 @@ If cannot find -lglut -lGL:
 sudo apt-get install freeglut3-dev
 sudo apt-get install libgl-dev
 ```
-
-Attention: Should be CUDA8.0, CUDA9.0 will cause some error later.
+Attention: Should be CUDA8.0, CUDA9.0 is not supported by matlab2017a and will cause some error later.
 
 4. Download and install cuDNN7.0 (cudnn-8.0-linux-x64-v7.1.tgz) on ubuntu: [[Link](https://drive.google.com/drive/folders/11TobALF_VWeBLsCfoVtJhGeRUMW_Oq1m?usp=sharing)]
 ```
 tar -xzvf cudnn-8.0-linux-x64-v7.1.tgz
-sudo cp cuda/include/cudnn.h /home/elab/yanInstall/cuda-8.0/include
-sudo cp cuda/lib64/libcudnn* /home/elab/yanInstall/cuda-8.0/lib64
-sudo chmod a+r /home/elab/yanInstall/cuda-8.0/include/cudnn.h 
+sudo cp cuda/include/cudnn.h /usr/local/cuda-8.0/include
+sudo cp cuda/lib64/libcudnn* /usr/local/cuda-8.0/lib64
+sudo chmod a+r /usr/local/cuda-8.0/include/cudnn.h 
+sudo rm -R cuda
 ```
 Check the version of cudnn:
 ```
-cat /home/elab/yanInstall/cuda-8.0/include/cudnn.h | grep CUDNN_MAJOR -A 2
+cat /usr/local/cuda-8.0/include/cudnn.h | grep CUDNN_MAJOR -A 2
 ```
 
 5. Install git cmake ccmake etc.
@@ -98,7 +108,7 @@ cd release
 Change the item `OPENCV_EXTRA_MODULE_PATH` as `/home/elab/Amy/opencv_contrib/modules`, configure, configure and generate, then:
 ```
 cmake -D OPENCV_EXTRA_MODULE_PATH=/home/elab/Amy/opencv_contrib/modules -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
-make -j`nproc`
+make -j`nproc` 
 sudo make install
 ```
 
@@ -115,9 +125,9 @@ OPENMP=1
 If you use your own path location like me, then change:
 ```
 ifeq ($(GPU), 1) 
-COMMON+= -DGPU -I/home/elab/yanInstall/cuda-8.0/include/
+COMMON+= -DGPU -I/usr/local/cuda-8.0/include/
 CFLAGS+= -DGPU
-LDFLAGS+= -L/home/elab/yanInstall/cuda-8.0/lib64 -lcuda -lcudart -lcublas -lcurand
+LDFLAGS+= -L/usr/local/cuda-8.0/lib64 -lcuda -lcudart -lcublas -lcurand
 endif
 ```
 then run:
