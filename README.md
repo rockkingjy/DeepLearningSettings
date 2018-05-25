@@ -153,6 +153,7 @@ make -j`nproc`
 sudo make install
 ```
 then follow https://github.com/rockkingjy/Inference_RGB2D_caffe to run a RGB2Depth programme.
+**Attention!!! If caffe/build/ exists, remember first to delete it!**
 
 9. Install matlab2017 following: https://github.com/rockkingjy/DeepLearningSettings/blob/master/matlab.md
 
