@@ -148,9 +148,8 @@ If it run successfully, you will see the predictions.png in darknet/, that also 
 git clone https://github.com/rockkingjy/caffe
 cd caffe
 mkdir build
-cmake ..
-make -j`nproc`
-sudo make install
+make clean
+make all -j`nproc`
 ```
 then follow https://github.com/rockkingjy/Inference_RGB2D_caffe to run a RGB2Depth programme.
 
