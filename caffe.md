@@ -1,3 +1,10 @@
+## Careful! Before compile, you need to change back to set high priority to gcc-5 to compile caffe if you've used gcc-4.9 before.
+```
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 50
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 100
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 50
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 100
+```
 ## Install
 ```
 sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler
