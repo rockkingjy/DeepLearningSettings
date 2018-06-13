@@ -5,7 +5,7 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 100
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 50
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 100
 ```
-## Install
+## Install by makefile on Linux
 ```
 sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler
 sudo apt-get install --no-install-recommends libboost-all-dev
@@ -47,7 +47,24 @@ And add the lib to the ~/.bashrc for future use:
 ```
 export LD_LIBRARY_PATH=/media/elab/sdd/caffe/build/lib:$LD_LIBRARY_PATH
 ```
-
+====================================================
+## Install on Mac
+```
+brew install boost
+brew install protobuf
+brew install hdf5
+brew install lmdb
+brew install leveldb
+brew install glog
+```
+```
+mkdir build
+cd build
+cmake ..
+make -j`nproc`
+make install
+```
+====================================================
 ## Draw the nets
 ```
 python ./python/draw_net.py train.prototxt pic.png
