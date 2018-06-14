@@ -143,11 +143,22 @@ then run:
 ```
 If it run successfully, you will see the predictions.png in darknet/, that also mean your CUDA and cudnn installs correctly.
 
-8. Install Caffe (Direct make install and more details in https://github.com/rockkingjy/DeepLearningSettings/blob/master/caffe.md)
+8. Install Caffe (Direct makefile install and more details in https://github.com/rockkingjy/DeepLearningSettings/blob/master/caffe.md)
+Update CMake to compatible with Boost version:
+```
+apt-get remove cmake
+git clone https://gitlab.kitware.com/cmake/cmake.git
+cd cmake
+./bootstrap
+make -j12
+make install
+```
+Then make and install:
 ```
 git clone https://github.com/rockkingjy/caffe
 cd caffe
 mkdir build
+cmake ..
 make clean
 make all -j`nproc`
 ```
