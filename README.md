@@ -145,11 +145,13 @@ If it run successfully, you will see the predictions.png in darknet/, that also 
 
 8. Install Caffe (Direct makefile install and more details in https://github.com/rockkingjy/DeepLearningSettings/blob/master/caffe.md)
 Update CMake to compatible with Boost version:
+```
 Boost 1.63 requires CMake 3.7 or newer.
 Boost 1.64 requires CMake 3.8 or newer.
 Boost 1.65 and 1.65.1 require CMake 3.9.3 or newer.
 Boost 1.66 requires CMake 3.11 or newer.
 Boost 1.67 is only supported by CMake master since March 2018.
+```
 ```
 apt-get remove cmake
 git clone https://gitlab.kitware.com/cmake/cmake.git
@@ -158,7 +160,23 @@ cd cmake
 make -j12
 make install
 ```
-Then make and install:
+Download boost [[Link](https://drive.google.com/drive/folders/11TobALF_VWeBLsCfoVtJhGeRUMW_Oq1m?usp=sharing)] and install:
+```
+sudo ./bootstrap.sh
+sudo ./b2 install
+```
+It will install in `\usr\local\include\boost` and `\usr\local\lib` automatically.
+
+If you use python 2.7, change the file in `caffe\cmake\Dependencies.cmake', replace:
+```
+    find_package(Boost 1.46 COMPONENTS python)
+```
+with 
+```
+    find_package(Boost 1.46 COMPONENTS python27)
+    set(Boost_PYTHON_FOUND ${Boost_python27}_FOUND})
+```
+Then camke, make and install:
 ```
 git clone https://github.com/rockkingjy/caffe
 cd caffe
