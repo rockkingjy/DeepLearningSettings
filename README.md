@@ -143,7 +143,8 @@ then run:
 ```
 If it run successfully, you will see the predictions.png in darknet/, that also mean your CUDA and cudnn installs correctly.
 
-8. Install Caffe (Direct makefile install and more details in https://github.com/rockkingjy/DeepLearningSettings/blob/master/caffe.md)
+8. Install Caffe (Direct makefile install and more details in https://github.com/rockkingjy/DeepLearningSettings/blob/master/caffe.md).
+
 Update CMake to compatible with Boost version:
 ```
 Boost 1.63 requires CMake 3.7 or newer.
@@ -184,6 +185,8 @@ mkdir build
 cmake ..
 make clean
 make all -j`nproc`
+make pycaffe
+make install
 ```
 then follow https://github.com/rockkingjy/Inference_RGB2D_caffe to run a RGB2Depth programme.
 
