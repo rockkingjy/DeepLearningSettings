@@ -145,6 +145,11 @@ If it run successfully, you will see the predictions.png in darknet/, that also 
 
 8. Install Caffe (Direct makefile install and more details in https://github.com/rockkingjy/DeepLearningSettings/blob/master/caffe.md)
 Update CMake to compatible with Boost version:
+Boost 1.63 requires CMake 3.7 or newer.
+Boost 1.64 requires CMake 3.8 or newer.
+Boost 1.65 and 1.65.1 require CMake 3.9.3 or newer.
+Boost 1.66 requires CMake 3.11 or newer.
+Boost 1.67 is only supported by CMake master since March 2018.
 ```
 apt-get remove cmake
 git clone https://gitlab.kitware.com/cmake/cmake.git
