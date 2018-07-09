@@ -20,7 +20,7 @@ Attention: If choose from the LEGACY OPTIONS, it will cause the problem of unabl
 
 Download `NVIDIA-Linux-x86_64-384.59.run` and `cuda_8.0.61_375.26_linux.run` [[Link](https://drive.google.com/drive/folders/11TobALF_VWeBLsCfoVtJhGeRUMW_Oq1m?usp=sharing)]
 
-Need to update from 14.4.01 to **14.4.04** to install the driver(else have error of install driver):
+Need to update from 16.04.1 to **14.04.4** to install the driver(else have error of install driver):
 ```
 sudo apt-get update
 sudo apt-get upgrade
