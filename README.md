@@ -1,5 +1,9 @@
 # DeepLearning Computer Settings and test with darknet (With all the files' links, so don't worry about the version compilance)
 
+## My Computer hardware:
+* Intel Core i9-7920
+* 1080Ti x 2
+
 1. Create a bootable USB stick on macOS
 
 Download ubuntu-16.04.1-desktop-amd64.iso [[Link](https://drive.google.com/drive/folders/11TobALF_VWeBLsCfoVtJhGeRUMW_Oq1m?usp=sharing)]
@@ -18,7 +22,9 @@ Attention: If choose from the LEGACY OPTIONS, it will cause the problem of unabl
 
 3.Install Nvidia GPU driver and CUDA 8.0
 
-Download `NVIDIA-Linux-x86_64-384.59.run` and `cuda_8.0.61_375.26_linux.run` [[Link](https://drive.google.com/drive/folders/11TobALF_VWeBLsCfoVtJhGeRUMW_Oq1m?usp=sharing)]
+**Attention!!!: There is a compaliance problem of Nvidia 1080Ti and Ubuntu16.04, so a special version of driver (NVIDIA-Linux-x86_64-384.130-no-compat32.run) needed. Else it will cause loop in start up of os system. Or you can install with (NVIDIA-Linux-x86_64-384.59.run) without Opengl, it also works.**
+
+Download `NVIDIA-Linux-x86_64-384.130-no-compat32.run`, `NVIDIA-Linux-x86_64-384.59.run` and `cuda_8.0.61_375.26_linux.run` [[Link](https://drive.google.com/drive/folders/11TobALF_VWeBLsCfoVtJhGeRUMW_Oq1m?usp=sharing)]
 
 Need to update from 16.04.1 to **16.04.4** to install the driver(else have error of install driver):
 ```
@@ -28,6 +34,14 @@ lsb_release -a
 ```
 Install the driver:
 Ctrl+Alt+F1 -> login -> 
+```
+sudo service lightdm stop 
+sudo chmod 777 ./NVIDIA-Linux-x86_64-384.59.run
+sudo ./NVIDIA-Linux-x86_64-384.130-no-compat32.run
+reboot
+nvidia-smi
+```
+or
 ```
 sudo service lightdm stop 
 sudo chmod 777 ./NVIDIA-Linux-x86_64-384.59.run
