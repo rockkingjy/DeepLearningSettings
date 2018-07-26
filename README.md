@@ -121,9 +121,18 @@ mkdir release
 cd release
 ccmake ..
 ```
-**set `OPENCV_EXTRA_MODULE_PATH` as `/media/elab/sdd/Amy/opencv_contrib/modules`**,  configure, configure and generate, then:
+**set `OPENCV_EXTRA_MODULE_PATH` as `/media/elab/sdd/Amy/opencv_contrib/modules`**, configure, configure and generate, then:
 ```
-cmake -D OPENCV_EXTRA_MODULE_PATH=/media/elab/sdd/Amy/opencv_contrib/modules -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
+cmake -D OPENCV_EXTRA_MODULE_PATH=/media/elab/sdd/Amy/opencv_contrib/modules \
+    -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D WITH_CUDA=ON \
+    -D ENABLE_FAST_MATH=1 \
+    -D CUDA_FAST_MATH=1 \
+    -D WITH_CUBLAS=1 \
+    ..
 make -j`nproc` 
 sudo make install
 ```
