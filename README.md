@@ -50,6 +50,7 @@ reboot
 nvidia-smi
 ```
 ***Re-install if dev/sda1:clean... error happens after reboot***
+
 Ctrl+Alt+F1 -> login -> 
 ```
 sudo mkdir /media/elab/sdd
