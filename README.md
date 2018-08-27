@@ -36,7 +36,7 @@ Install the driver:
 Ctrl+Alt+F1 -> login -> 
 ```
 sudo service lightdm stop 
-sudo chmod 777 ./NVIDIA-Linux-x86_64-384.59.run
+sudo chmod 777 ./NVIDIA-Linux-x86_64-384.130-no-compat32.run
 sudo ./NVIDIA-Linux-x86_64-384.130-no-compat32.run
 reboot
 nvidia-smi
