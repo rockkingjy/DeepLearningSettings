@@ -49,6 +49,19 @@ sudo ./NVIDIA-Linux-x86_64-384.59.run --no-opengl-files
 reboot
 nvidia-smi
 ```
+***Re-install if dev/sda1:clean... error happens after reboot***
+Ctrl+Alt+F1 -> login -> 
+```
+sudo mkdir /media/elab/sdd
+sudo mount /dev/sdd /media/elab/sdd
+cd /meida/elab/sdd/Amy
+sudo service lightdm stop 
+sudo chmod 777 ./NVIDIA-Linux-x86_64-384.130-no-compat32.run
+sudo ./NVIDIA-Linux-x86_64-384.130-no-compat32.run
+reboot
+```
+
+
 Install cuda 8.0(do not install driver again):
 ```
 chmod 777 cuda_8.0.61_375.26_linux.run
